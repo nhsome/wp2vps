@@ -1,0 +1,23 @@
+- name: Add repository for PHP
+  apt_repository: repo='ppa:ondrej/php'
+
+- name: install php5
+  apt: pkg={{ item }}
+  with_items:
+    - php7.2
+    - php7.2-cgi
+    - php7.2-fpm
+    - php7.2-memcache
+    - php7.2-memcached
+    - php7.2-mcrypt
+    - php7.2-mysql
+    - php7.2-gd
+    - php7.2-curl
+    - php7.2-xmlrpc
+
+- name: change listen socket
+  lineinfile:
+    dest: '/etc/php7.2/fpm/pool.d/www.conf'
+    insertafter: 'listen = 127.0.0.1:9000'
+    line: 'listen = /var/run/fpm.socket'
+  notify: restart php7.2-fpm

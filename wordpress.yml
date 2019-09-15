@@ -12,5 +12,5 @@
   - { role: nginx }
   - { role: mysql }
   - { role: memcached }
-  - { role: php5 }
+  - { role: php7 }
   - { role: wordpress }
