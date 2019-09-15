@@ -5,6 +5,11 @@
       - mysql-client
     update_cache: true
 
+- name: Make sure pymysql is present
+  pip:
+    name: pymysql
+    state: present
+
 - name: Change root password (fail is not a problem)
   mysql_user:
     name: root
