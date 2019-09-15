@@ -21,4 +21,5 @@
   mysql_user:
     name: root
     password: "{{ mysql_root_password}}"
+    login_unix_socket: /var/run/mysqld/mysqld.sock
   ignore_errors: yes
