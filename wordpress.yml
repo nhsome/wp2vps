@@ -10,7 +10,7 @@
     - db_password: "wordpress"
   roles:
   - { role: nginx }
-  - { role: percona-mysql }
+  - { role: mysql }
   - { role: memcached }
   - { role: php5 }
   - { role: wordpress }
