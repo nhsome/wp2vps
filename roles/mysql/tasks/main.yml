@@ -5,6 +5,12 @@
       - mysql-client
     update_cache: true
 
+- name: Install pip
+  apt:
+    name: python-pip
+    update_cache: yes
+    state: present
+
 - name: Make sure pymysql is present
   pip:
     name: pymysql
