@@ -1,3 +1,6 @@
+- name: Add repository for PHP
+  apt_repository: repo='ppa:ondrej/php'
+
 - name: install php5
   apt: pkg={{ item }}
   with_items:
